@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home {
+    background: url('./assets/close-up-collection-make-up-beauty-products.jpg') center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    height: 65vh;
+}
+
+.home h1 {
+    font-size: 3em;
+    color: white;
+    font-weight: bolder;
+}
