@@ -5,19 +5,29 @@ import Footer from './Components/Footer';
 import ProductList from './Components/ProductList';
 import Products from './Components/Products';
 import Home from './Components/Home';
+import { NavLink, BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import product1 from '../src/assets/product1.png'
+import product2 from '../src/assets/product2.png'
+import product3 from '../src/assets/product3.png'
+import product4 from '../src/assets/product4.png'
+import product5 from '../src/assets/product5.png'
+import product6 from '../src/assets/product6.png'
 
 
 const App = () => {
   const [products] = useState([
-    { id: 1, name: 'Product 1', description: 'This is product 1', price: 10 },
-    { id: 2, name: 'Product 2', description: 'This is product 2', price: 20 },
-    { id: 3, name: 'Product 3', description: 'This is product 3', price: 30 },
+    { id: 1, name: 'Product 1', description: 'This is product 1', price: 10, image: product1 },
+    { id: 2, name: 'Product 2', description: 'This is product 2', price: 20, image: product2 },
+    { id: 3, name: 'Product 3', description: 'This is product 3', price: 30, image: product3 },
+    { id: 4, name: 'Product 4', description: 'This is product 4', price: 30, image: product4 },
+    { id: 5, name: 'Product 5', description: 'This is product 4', price: 30, image: product5 },
+    { id: 5, name: 'Product 6', description: 'This is product 6', price: 30, image: product6 },
   ]);
 
   const [cart] = useState([]); // For simplicity, cart is an empty array here
 
   return (
-    <div className="w-lvw App">
+    <div className="w-full App">
       <Navbar />
       <div className="min-h-screen p-4">
         <Home/>

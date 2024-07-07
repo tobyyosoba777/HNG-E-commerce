@@ -5,8 +5,8 @@ import "../Home.css"
 const Home = () => {
   return (
     <div>
-      <main className='home'>
-            <h1>
+      <main className='mx-auto home'>
+            <h1 className='ml-5 text-6xl tracking-wide max-w-lg:text-2xl'>
                 Be Bold,<br />
                 Be Beautiful <br/>
                 with Bold Beauty
