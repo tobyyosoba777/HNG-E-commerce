@@ -17,8 +17,8 @@ const Home = ({ products }) => {
           We offer only the best products because the health of your skin is our priority
         </p>
 
-        <div className="links flex items-end gap-5 ml-5 ">
-          <button className="hover:-translate-y-1 hover:duration-75 bg-white text-black font-bold py-1 px-5 rounded-md">
+        <div className="flex items-end gap-5 ml-5 links ">
+          <button className="px-5 py-1 font-bold text-black bg-white rounded-md hover:-translate-y-1 hover:duration-75">
             {`Go to Cart`}
             {/* <Router>
             <Routes>
@@ -27,13 +27,13 @@ const Home = ({ products }) => {
         </Router> */}
           </button>
 
-          <button className="hover:-translate-y-1 hover:duration-200 bg-transparent border text-white font-bold py-1 px-5 rounded-md">
+          <button className="px-5 py-1 font-bold text-white bg-transparent border rounded-md hover:-translate-y-1 hover:duration-200">
             {`View Products`}
           </button>
         </div>
       </main>
 
-      <section className="product-list flex flex-wrap justify-center gap-4 mt-10">
+      <section className="flex flex-wrap justify-center gap-4 mt-10 product-list">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}

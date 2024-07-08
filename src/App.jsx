@@ -8,6 +8,9 @@ import Home from './Components/Home';
 import Cart from './Components/Cart';
 import ContactUs from './Components/ContactUs';
 import { CartProvider } from './Components/CartContext';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
 
 import product1 from './assets/product1.png';
 import product2 from './assets/product2.png';
@@ -25,6 +28,7 @@ const App = () => {
     { id: 5, name: 'Bold Beauty Serum', description: 'This is product 4', price: 30, image: product5 },
     { id: 6, name: 'Bold Beauty Cocoa Lotion', description: 'This is product 6', price: 30, image: product6 },
   ];
+  
 
   return (
     <CartProvider>
@@ -41,6 +45,7 @@ const App = () => {
             </Routes>
           </div>
           <Footer />
+          {/* <ToastContainer/> */}
         </div>
       </Router>
     </CartProvider>
