@@ -18,14 +18,14 @@
     return (
       <Router>
       <nav
-        className="sticky z-50 flex items-center justify-between px-10 mx-auto mt-5 text-gray-700 bg-white sm:w-full w-10-full md:border md:border-gray-400 md:rounded-full top-2 max-w-md:rounded-none max-w-md:border-none sm:w-4/5 md:w-4/5 lg:w-3/4 xl:w-11/12"
+        className="sticky z-50 flex items-center justify-between px-10 mx-auto mt-2 text-gray-700 bg-white w-10-full md:border md:border-gray-400 md:rounded-full top-2 max-w-md:rounded-none max-w-md:border-none sm:w-4/5 md:w-4/5 lg:w-3/4 xl:w-11/12"
       >
       <img
           alt="Logo-icon"
           src={LightLogo}
           className="ml-2"
-          width={70}
-          height={70}
+          width={80}
+          height={80}
         />
         
         <ul className="items-center justify-center hidden mr-5 space-x-12 lg:flex">
@@ -53,7 +53,6 @@
 
           
         
-
         {mobileDrawerOpen && (
           <div className="fixed top-0 right-0 z-20 flex flex-col items-center justify-center w-1/2 h-full bg-neutral-200 text-gray-950 lg:hidden">
               <ul>

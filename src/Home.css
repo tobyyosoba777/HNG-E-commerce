@@ -5,28 +5,36 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     width: 100%;
 }
 
 .home {
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat;
-    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat;
+    height: 72vh;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: left;
+    justify-content: center;
     margin: 0 auto;
-    border-radius: 7px;
+    border-radius: 6px;
 }
 
 
 .home h1 {
     color: white;
     font-weight: bolder;
-    filter: brightness(1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home p {
+    color: white;
 }
 
 @media screen and(max-width: 1076px) {
