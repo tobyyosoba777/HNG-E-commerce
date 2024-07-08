@@ -3,13 +3,12 @@
   import DarkLogo from '../assets/LogoDark.png'
   import { useState } from "react";
   import { NavLink, BrowserRouter as Router, Route, Routes } from "react-router-dom";
-  import { X, Menu, LogOutIcon, ShoppingCart, HomeIcon, Sun, Moon, SunIcon, MoonIcon } from "lucide-react";
+  import { X, Menu, LogOutIcon } from "lucide-react";
   
 
   const Navbar = () => {
 
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
-    const [darkMode, setDarkMode] = useState(false)
 
       const toggleNavbar = () => {
           setMobileDrawerOpen(!mobileDrawerOpen)
@@ -19,14 +18,12 @@
     return (
       <Router>
       <nav
-        className={`sticky z-50 flex items-center justify-between w-full mx-auto mt-5 ${
-          darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-700"
-        } md:border md:border-gray-400 md:rounded-full top-3 max-w-md:rounded-none max-w-md:border-none md:w-3/4 lg:w-3/4 xl:w-11/12`}
+        className="sticky z-50 flex items-center justify-between px-10 mx-auto mt-5 text-gray-700 bg-white sm:w-full w-10-full md:border md:border-gray-400 md:rounded-full top-2 max-w-md:rounded-none max-w-md:border-none sm:w-4/5 md:w-4/5 lg:w-3/4 xl:w-11/12"
       >
       <img
           alt="Logo-icon"
-          src={darkMode ? DarkLogo : LightLogo}
-          className="ml-10"
+          src={LightLogo}
+          className="ml-2"
           width={70}
           height={70}
         />
@@ -50,7 +47,7 @@
         
           <div className="justify-end lg:hidden md:flex-col">
               <button onClick={toggleNavbar} className="relative z-50">
-                  {mobileDrawerOpen ? <X size={30} className="z-50 text-gray-950"/> : <Menu size={30}/>}
+                  {mobileDrawerOpen ? <X size={30} className="z-50 text-gray-950"/> : <Menu className="text-black" size={30}/>}
               </button>
           </div>
 

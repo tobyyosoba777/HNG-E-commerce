@@ -12,23 +12,16 @@ body {
 }
 
 .home {
-    /* background: url('./assets/close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat; */
+    width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat;
     height: 70vh;
     display: flex;
     justify-content: left;
     align-items: center;
-    filter: brightness(0.5);
+    margin: 0 auto;
+    border-radius: 7px;
 }
 
-.home {
-    display: flex;
-    height: 65vh;
-    color: white;
-    filter: brightness(1);
-    width: 89%;
-    margin: 0 auto;
-}
 
 .home h1 {
     color: white;
