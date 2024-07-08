@@ -1,7 +1,9 @@
 // src/Components/Checkout.jsx
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from './CartContext';
 
-const Checkout = ({ cart }) => {
+const Checkout = () => {
+  const { cart } = useContext(CartContext);
   const [formData, setFormData] = useState({ name: '', address: '', email: '' });
 
   const handleChange = (e) => {
@@ -18,7 +20,8 @@ const Checkout = ({ cart }) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Checkout</h2>
+      <h2 className="mb-4 text-4xl font-bold">Check Out</h2>
+      <h2 className='mb-5 ml-5 text-2xl font-normal'>Shipping Details</h2>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
           <label className="block text-gray-700">Name:</label>
@@ -27,7 +30,7 @@ const Checkout = ({ cart }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="w-full p-2 mt-1 border rounded"
           />
         </div>
         <div>
@@ -37,7 +40,7 @@ const Checkout = ({ cart }) => {
             name="address"
             value={formData.address}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="w-full p-2 mt-1 border rounded"
           />
         </div>
         <div>
@@ -47,17 +50,17 @@ const Checkout = ({ cart }) => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="w-full p-2 mt-1 border rounded"
           />
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+          className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-700"
         >
           Place Order
         </button>
       </form>
-      <h3 className="text-xl font-bold mt-8">Order Summary</h3>
+      <h3 className="mt-8 text-xl font-bold">Order Summary</h3>
       <ul className="space-y-2">
         {cart.map((item) => (
           <li key={item.id} className="flex justify-between p-2 border-b">
@@ -65,7 +68,7 @@ const Checkout = ({ cart }) => {
               <h4 className="font-semibold">{item.name}</h4>
               <p className="text-gray-700">${item.price} x {item.quantity}</p>
             </div>
-            <img src={item.image} alt={item.name} className="w-20 h-20 object-cover" />
+            <img src={item.image} alt={item.name} className="object-cover w-20 h-20" />
           </li>
         ))}
       </ul>

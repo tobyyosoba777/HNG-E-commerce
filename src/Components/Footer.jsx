@@ -23,7 +23,7 @@ const Footer = () => (
             </li>
         ))}
     </ul>
-    <p>&copy; 2024 My E-Commerce Site</p>
+    <p>&copy; 2024 Bold Beauty</p>
   </footer>
 );
 

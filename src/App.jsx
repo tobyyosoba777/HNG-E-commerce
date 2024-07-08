@@ -2,16 +2,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Checkout from './Components/Checkout';
 import Footer from './Components/Footer';
 import ProductList from './Components/ProductList';
 import Home from './Components/Home';
 import Cart from './Components/Cart';
 import ContactUs from './Components/ContactUs';
+import Checkout from './Components/Checkout';
 import { CartProvider } from './Components/CartContext';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
 import product1 from './assets/product1.png';
 import product2 from './assets/product2.png';
 import product3 from './assets/product3.png';
@@ -44,7 +41,6 @@ const App = () => {
             </Routes>
           </div>
           <Footer />
-          {/* <ToastContainer/> */}
         </div>
       </Router>
     </CartProvider>

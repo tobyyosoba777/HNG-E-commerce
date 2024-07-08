@@ -1,11 +1,13 @@
+// src/Components/Cart.jsx
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import Payment from './Payment';
 import { Trash } from 'lucide-react';
 
-
 const Cart = () => {
   const { cart, updateQuantity, removeItem } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const handleQuantityChange = (productId, quantity) => {
     if (quantity >= 1) {
@@ -22,7 +24,7 @@ const Cart = () => {
   return (
     <div className="p-4">
       <h2 className="mb-4 text-2xl font-bold tracking-wide lg:text-3xl text-stone-900">My Cart</h2>
-      <ul className="space-y-4 ">
+      <ul className="space-y-4">
         {cart.map((item) => (
           <li key={item.id} className="flex justify-between p-2 border-b">
             <div>
@@ -57,7 +59,13 @@ const Cart = () => {
       <div className="mt-4 text-xl font-semibold">
         Total: ${total.toFixed(2)}
       </div>
-      <Payment/>
+      <button
+        onClick={() => navigate('/checkout')}
+        className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
+      >
+        Proceed to Checkout
+      </button>
+      <Payment />
     </div>
   );
 };
