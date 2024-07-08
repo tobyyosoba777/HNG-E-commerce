@@ -1,9 +1,18 @@
-// src/Components/Notification.jsx
-import React from 'react';
+// Notification.jsx
+import React, { useState, useEffect } from 'react';
 
-const Notification = ({ message, show }) => {
+const Notification = ({ message, visible, onClose }) => {
+  useEffect(() => {
+    if (visible) {
+      const timer = setTimeout(onClose, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [visible, onClose]);
+
+  if (!visible) return null;
+
   return (
-    <div className={`fixed top-4 right-4 p-4 bg-green-500 text-white rounded shadow-md transition-transform ${show ? 'transform translate-x-0' : 'transform translate-x-full'}`}>
+    <div className="fixed px-4 py-2 text-white bg-green-500 rounded shadow-lg top-4 right-4">
       {message}
     </div>
   );

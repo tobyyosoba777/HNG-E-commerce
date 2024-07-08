@@ -12,12 +12,15 @@ const ProductCard = ({ product }) => {
           <h2 className="text-xl font-bold text-center">{product.name}</h2>
           {/* <p className="text-gray-700">{product.description}</p> */}
           <p className="font-semibold text-center text-">${product.price}</p>
-          <button
-            onClick={() => addToCart(product)}
-            className="items-center px-4 py-1 mx-auto text-center text-white bg-orange-700 rounded hover:bg-orange-800"
-          >
-            Add to Cart
-          </button>
+          <div className='flex items-center justify-center mt-5'>
+            <button
+              onClick={() => addToCart(product)}
+              className="items-center px-4 py-1 mx-auto text-center text-white bg-orange-700 rounded hover:bg-orange-800"
+            >
+              Add to Cart
+            </button>
+          </div>
+          
         </div>
       </div>
     </div>
