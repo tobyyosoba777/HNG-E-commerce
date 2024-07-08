@@ -1,9 +1,11 @@
 // src/Components/Checkout.jsx
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
 
 const Checkout = () => {
   const { cart } = useContext(CartContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +25,8 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Order submitted', formData);
-    // Additional logic to handle order submission
+    // Navigate to the Payments page
+    navigate('/payments');
   };
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
