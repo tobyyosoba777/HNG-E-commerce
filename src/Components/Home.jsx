@@ -25,10 +25,7 @@ const Home = () => {
               </button>
             </div>
 
-            {/* <NavLink to="/cart" className="flex items-center gap-2 px-3 py-2 border rounded-md">
-              <ShoppingCart />
-              Cart
-            </NavLink> */}
+            
       </main>
     </div>
   )

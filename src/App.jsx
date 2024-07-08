@@ -16,12 +16,12 @@ import product6 from '../src/assets/product6.png'
 
 const App = () => {
   const [products] = useState([
-    { id: 1, name: 'Product 1', description: 'This is product 1', price: 10, image: product1 },
-    { id: 2, name: 'Product 2', description: 'This is product 2', price: 20, image: product2 },
-    { id: 3, name: 'Product 3', description: 'This is product 3', price: 30, image: product3 },
-    { id: 4, name: 'Product 4', description: 'This is product 4', price: 30, image: product4 },
-    { id: 5, name: 'Product 5', description: 'This is product 4', price: 30, image: product5 },
-    { id: 5, name: 'Product 6', description: 'This is product 6', price: 30, image: product6 },
+    { id: 1, name: 'Bold Beauty Special Lipstick', description: 'This is product 1', price: 10, image: product1 },
+    { id: 2, name: 'Bold Beauty Foundation', description: 'This is product 2', price: 20, image: product2 },
+    { id: 3, name: 'Bold Beauty Brush Set', description: 'This is product 3', price: 30, image: product3 },
+    { id: 4, name: 'Bold Beauty Rejuvenating Scrub', description: 'This is product 4', price: 30, image: product4 },
+    { id: 5, name: 'Bold Beauty Serum', description: 'This is product 4', price: 30, image: product5 },
+    { id: 5, name: 'Bold Beauty Cocoa Lotion', description: 'This is product 6', price: 30, image: product6 },
   ]);
 
   const [cart] = useState([]); // For simplicity, cart is an empty array here
