@@ -1,10 +1,21 @@
 // src/Components/Home.jsx
 import React from 'react';
 import ProductCard from './ProductCard';
-import { Router, Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route, useNavigate } from 'react-router-dom';
 import '../Home.css';
 
 const Home = ({ products }) => {
+
+  const navigate = useNavigate();
+
+  const handleGoToCart = () => {
+    navigate('/cart');
+  };
+
+  const handleViewProducts = () => {
+    navigate('/products');
+  };
+
   return (
     <div>
       <main className='mx-auto home'>
@@ -17,8 +28,11 @@ const Home = ({ products }) => {
           We offer only the best products because the health of your skin is our priority
         </p>
 
-        <div className="flex items-end gap-5 ml-5 links ">
-          <button className="px-5 py-1 font-bold text-black bg-white rounded-md hover:-translate-y-1 hover:duration-75">
+        <div className="flex items-end gap-5 ml-5 links " style={{
+          fontFamily: "Lato, sans-serif"
+        }}>
+          <button className="px-5 py-1 font-bold text-black bg-white rounded-md hover:-translate-y-1 hover:duration-75"
+            onClick={handleGoToCart}>
             {`Go to Cart`}
             {/* <Router>
             <Routes>
@@ -27,7 +41,8 @@ const Home = ({ products }) => {
         </Router> */}
           </button>
 
-          <button className="px-5 py-1 font-bold text-white bg-transparent border rounded-md hover:-translate-y-1 hover:duration-200">
+          <button className="px-5 py-1 font-bold text-white bg-transparent border rounded-md hover:-translate-y-1 hover:duration-200"
+            onClick={handleViewProducts}>
             {`View Products`}
           </button>
         </div>
