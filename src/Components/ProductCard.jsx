@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from './CartContext';
 
 const ProductCard = ({ product }) => {
@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
           <p className="font-semibold text-green-500">${product.price}</p>
           <button
             onClick={() => addToCart(product)}
-            className="bg-blue-500 text-center mx-auto text-white py-1 px-4 rounded hover:bg-blue-700"
+            className="px-4 py-1 mx-auto text-center text-white bg-blue-500 rounded hover:bg-blue-700"
           >
             Add to Cart
           </button>
