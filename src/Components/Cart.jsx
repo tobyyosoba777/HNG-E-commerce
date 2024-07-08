@@ -1,7 +1,9 @@
-// src/Components/Cart.jsx
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from './CartContext';
 
-const Cart = ({ cart, updateQuantity }) => {
+const Cart = () => {
+  const { cart, updateQuantity } = useContext(CartContext);
+
   const handleQuantityChange = (productId, quantity) => {
     if (quantity >= 1) {
       updateQuantity(productId, quantity);
@@ -12,11 +14,12 @@ const Cart = ({ cart, updateQuantity }) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Cart</h2>
-      <ul className="space-y-4">
+      <h2 className="text-2xl font-bold mb-4">My Cart</h2>
+      <ul className="space-y-4 flex flex-col ">
         {cart.map((item) => (
-          <li key={item.id} className="flex justify-between items-center p-2 border-b">
+          <li key={item.id} className="flex items-center w-7 p-2 border-b">
             <div>
+              <img src={item.image} alt={item.name} className="w-40 h-40 object-cover" />
               <h4 className="font-semibold">{item.name}</h4>
               <p className="text-gray-700">${item.price} x {item.quantity}</p>
             </div>
@@ -35,7 +38,6 @@ const Cart = ({ cart, updateQuantity }) => {
                 +
               </button>
             </div>
-            <img src={item.image} alt={item.name} className="w-20 h-20 object-cover" />
           </li>
         ))}
       </ul>

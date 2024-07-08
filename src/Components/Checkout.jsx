@@ -1,3 +1,4 @@
+// src/Components/Checkout.jsx
 import { useState } from 'react';
 
 const Checkout = ({ cart }) => {
@@ -12,6 +13,8 @@ const Checkout = ({ cart }) => {
     e.preventDefault();
     console.log('Order submitted', formData);
   };
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <div className="p-4">
@@ -54,6 +57,21 @@ const Checkout = ({ cart }) => {
           Place Order
         </button>
       </form>
+      <h3 className="text-xl font-bold mt-8">Order Summary</h3>
+      <ul className="space-y-2">
+        {cart.map((item) => (
+          <li key={item.id} className="flex justify-between p-2 border-b">
+            <div>
+              <h4 className="font-semibold">{item.name}</h4>
+              <p className="text-gray-700">${item.price} x {item.quantity}</p>
+            </div>
+            <img src={item.image} alt={item.name} className="w-20 h-20 object-cover" />
+          </li>
+        ))}
+      </ul>
+      <div className="mt-4 text-xl font-semibold">
+        Total: ${total.toFixed(2)}
+      </div>
     </div>
   );
 };
