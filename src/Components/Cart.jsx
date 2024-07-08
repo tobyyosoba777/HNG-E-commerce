@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
 import Payment from './Payment';
+import { Trash } from 'lucide-react';
+
 
 const Cart = () => {
-  const { cart, updateQuantity } = useContext(CartContext);
+  const { cart, updateQuantity, removeItem } = useContext(CartContext);
 
   const handleQuantityChange = (productId, quantity) => {
     if (quantity >= 1) {
       updateQuantity(productId, quantity);
     }
+  };
+
+  const handleRemoveItem = (productId) => {
+    removeItem(productId);
   };
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -36,6 +42,12 @@ const Cart = () => {
                 className="bg-green-500 text-white py-1 px-3 rounded hover:bg-green-700"
               >
                 +
+              </button>
+              <button
+                onClick={() => handleRemoveItem(item.id)}
+                className="text-red-600 hover:text-red-800"
+              >
+                <Trash size={20} />
               </button>
             </div>
             <img src={item.image} alt={item.name} className="lg:w-28 lg:h-28 w-16 h-16 object-cover bg-gradient-to-b from-slate-500 to-slate-50 rounded-lg" />

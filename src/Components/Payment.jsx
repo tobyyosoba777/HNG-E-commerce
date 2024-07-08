@@ -2,8 +2,10 @@
 const Payment = () => {
   return (
     <div>
-      <div >
-        <header>Payment Method</header>
+      <div className="flex flex-col">
+        <header className="font-bold">Payment Method</header>
+
+        
       </div>
     </div>
   )
