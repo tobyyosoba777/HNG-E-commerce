@@ -13,7 +13,7 @@ body {
 
 .home {
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/minified-close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/minified-close-up-collection-make-up-beauty-products.jpg') center center/cover no-repeat;
     height: 72vh;
     display: flex;
     flex-direction: column;

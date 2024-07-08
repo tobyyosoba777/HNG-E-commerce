@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
+import Payment from './Payment';
 
 const Cart = () => {
   const { cart, updateQuantity } = useContext(CartContext);
@@ -14,12 +15,11 @@ const Cart = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">My Cart</h2>
-      <ul className="space-y-4 flex flex-col ">
+      <h2 className="text-2xl lg:text-3xl tracking-wide text-stone-900 font-bold mb-4">My Cart</h2>
+      <ul className="space-y-4 ">
         {cart.map((item) => (
-          <li key={item.id} className="flex items-center w-7 p-2 border-b">
+          <li key={item.id} className="flex justify-between  p-2 border-b">
             <div>
-              <img src={item.image} alt={item.name} className="w-40 h-40 object-cover" />
               <h4 className="font-semibold">{item.name}</h4>
               <p className="text-gray-700">${item.price} x {item.quantity}</p>
             </div>
@@ -38,12 +38,14 @@ const Cart = () => {
                 +
               </button>
             </div>
+            <img src={item.image} alt={item.name} className="lg:w-28 lg:h-28 w-16 h-16 object-cover bg-gradient-to-b from-slate-500 to-slate-50 rounded-lg" />
           </li>
         ))}
       </ul>
       <div className="mt-4 text-xl font-semibold">
         Total: ${total.toFixed(2)}
       </div>
+      <Payment/>
     </div>
   );
 };
