@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import Payment from './Payment';
 import { Trash } from 'lucide-react';
@@ -21,10 +21,10 @@ const Cart = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl lg:text-3xl tracking-wide text-stone-900 font-bold mb-4">My Cart</h2>
+      <h2 className="mb-4 text-2xl font-bold tracking-wide lg:text-3xl text-stone-900">My Cart</h2>
       <ul className="space-y-4 ">
         {cart.map((item) => (
-          <li key={item.id} className="flex justify-between  p-2 border-b">
+          <li key={item.id} className="flex justify-between p-2 border-b">
             <div>
               <h4 className="font-semibold">{item.name}</h4>
               <p className="text-gray-700">${item.price} x {item.quantity}</p>
@@ -32,14 +32,14 @@ const Cart = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
-                className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700"
+                className="px-3 py-1 text-white bg-red-500 rounded hover:bg-red-700"
               >
                 -
               </button>
               <span>{item.quantity}</span>
               <button
                 onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                className="bg-green-500 text-white py-1 px-3 rounded hover:bg-green-700"
+                className="px-3 py-1 text-white bg-green-500 rounded hover:bg-green-700"
               >
                 +
               </button>
@@ -50,7 +50,7 @@ const Cart = () => {
                 <Trash size={20} />
               </button>
             </div>
-            <img src={item.image} alt={item.name} className="lg:w-28 lg:h-28 w-16 h-16 object-cover bg-gradient-to-b from-slate-500 to-slate-50 rounded-lg" />
+            <img src={item.image} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" />
           </li>
         ))}
       </ul>
