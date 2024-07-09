@@ -1,12 +1,23 @@
 // src/Components/Payments.jsx
 import React, { useState } from 'react';
+import PaymentConfirmation from './PaymentConfirmation';
 
 const Payments = () => {
   const [paymentMethod, setPaymentMethod] = useState('Card');
+  const [paymentConfirmed, setPaymentConfirmed] = useState(false);
 
   const handlePaymentChange = (e) => {
     setPaymentMethod(e.target.value);
   };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setPaymentConfirmed(true);
+  };
+
+  if (paymentConfirmed) {
+    return <PaymentConfirmation />;
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
@@ -49,7 +60,7 @@ const Payments = () => {
         </div>
 
         {paymentMethod === 'Card' && (
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-gray-700">Name on card</label>
