@@ -17,7 +17,7 @@ const Footer = () => (
         {NavItems.map((item) => (
             <li key={item.id} className="py-1 pb-12 text-center ">
                 <div className="flex items-center justify-center gap-3">
-                  {item.icon}
+                  {/* {item.icon} */}
                   <a href={item.href}>{item.text}</a>
                 </div>
             </li>
