@@ -1,4 +1,3 @@
-// src/Components/Cart.jsx
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
@@ -19,7 +18,12 @@ const Cart = () => {
     removeItem(productId);
   };
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  // Ensure price and quantity are properly handled
+  const total = cart.reduce((sum, item) => {
+    const price = parseFloat(item.price) || 0;
+    const quantity = parseInt(item.quantity, 10) || 0;
+    return sum + price * quantity;
+  }, 0);
 
   return (
     <div className="p-4">
