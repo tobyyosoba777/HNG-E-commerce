@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import ProductList from './Components/ProductList';
@@ -9,6 +9,9 @@ import ContactUs from './Components/ContactUs';
 import Checkout from './Components/Checkout';
 import Payments from './Components/Payment';
 import { CartProvider } from './Components/CartContext';
+import ProductList1 from './Components/ProductList1';
+import ProductList2 from './Components/ProductList2';
+import ProductList3 from './Components/ProductList3';
 import Error from './Components/Error';
 import { fetchData } from '../apiService'; // Import your fetch function
 import ProductDetails from './Components/ProductDetails';
@@ -46,6 +49,11 @@ const App = () => {
         <div className="w-full App">
           <Navbar />
           <div className="min-h-screen p-4">
+          <div className="flex justify-center mb-4">
+              <Link to="/productlist1" className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600">Page 1</Link>
+              <Link to="/productlist2" className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600">Page 2</Link>
+              <Link to="/productlist3" className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600">Page 3</Link>
+            </div>
             <Routes>
               <Route path="/" element={<Home products={products} />} />
               <Route
@@ -53,6 +61,10 @@ const App = () => {
                 element={<ProductList products={products} loadMore={loadMore} totalPages={totalPages} />}
               />
               <Route path="/products/:productId" element={<ProductDetails products={products} />} />
+              <Route path="/productlist1" element={<ProductList1 products={products} />} />
+              <Route path="/productlist2" element={<ProductList2 products={products} />} />
+              <Route path="/productlist3" element={<ProductList3 products={products} />} />
+              
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/payments" element={<Payments />} />
