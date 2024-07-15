@@ -83,7 +83,3 @@ const ProductList = ({ products, loadMore }) => {
 };
 
 export default ProductList;
-
-
-
-
