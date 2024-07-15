@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
-import Payment from './Payment';
 import { Trash } from 'lucide-react';
 
-const Cart = ({ products }) => {
+const Cart = () => {
   const { cart, updateQuantity, removeItem } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const Cart = ({ products }) => {
     removeItem(productId);
   };
 
-  // Ensure price and quantity are properly handled
+  // Calculate total price
   const total = cart.reduce((sum, item) => {
     const price = parseFloat(item.price) || 0;
     const quantity = parseInt(item.quantity, 10) || 0;
@@ -56,8 +55,7 @@ const Cart = ({ products }) => {
                 <Trash size={20} />
               </button>
             </div>
-            {/* <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" /> */}
-            <img src={"https://api.timbu.cloud/images/${product?.photos[0]?.url}"} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" />
+            <img src={`https://api.timbu.cloud/images/${item.photos[0]?.url}`} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" />
           </li>
         ))}
       </ul>
@@ -70,7 +68,6 @@ const Cart = ({ products }) => {
       >
         Proceed to Checkout
       </button>
-      <Payment />
     </div>
   );
 };
