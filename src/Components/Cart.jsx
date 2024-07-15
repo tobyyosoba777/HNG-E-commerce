@@ -4,7 +4,7 @@ import { CartContext } from './CartContext';
 import Payment from './Payment';
 import { Trash } from 'lucide-react';
 
-const Cart = () => {
+const Cart = ({ products }) => {
   const { cart, updateQuantity, removeItem } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -56,7 +56,7 @@ const Cart = () => {
                 <Trash size={20} />
               </button>
             </div>
-            <img src={item.image} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" />
+            <img src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={item.name} className="object-cover w-16 h-16 rounded-lg lg:w-28 lg:h-28 bg-gradient-to-b from-slate-500 to-slate-50" />
           </li>
         ))}
       </ul>

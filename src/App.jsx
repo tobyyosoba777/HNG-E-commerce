@@ -10,25 +10,17 @@ import ContactUs from './Components/ContactUs';
 import Checkout from './Components/Checkout';
 import Payments from './Components/Payment';
 import { CartProvider } from './Components/CartContext';
-// import product1 from './assets/product1.png';
-// import product2 from './assets/product2.png';
-// import product3 from './assets/product3.png';
-// import product4 from './assets/product4.png';
-// import product5 from './assets/product5.png';
-// import product6 from './assets/product6.png';
 import Error from './Components/Error';
 import { fetchData } from '../apiService'; 
-import MyReactPage from './pages/MyReactPage';
-import Products from './Components/Products';
+import ProductDetails from './Components/ProductDetails';
 
 const App = () => {
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const data = await fetchData("/")
+        const data = await fetchData("/");
         console.log(data.items);
         setProducts(data.items);
       } catch (error) {
@@ -39,16 +31,6 @@ const App = () => {
     getProducts();
   }, []);
 
-
-  // const products = [
-  //   { id: 1, name: 'Bold Beauty Special Lipstick', description: 'This is product 1', price: 10, image: product1 },
-  //   { id: 2, name: 'Bold Beauty Foundation', description: 'This is product 2', price: 20, image: product2 },
-  //   { id: 3, name: 'Bold Beauty Brush Set', description: 'This is product 3', price: 30, image: product3 },
-  //   { id: 4, name: 'Bold Beauty Rejuvenating Scrub', description: 'This is product 4', price: 30, image: product4 },
-  //   { id: 5, name: 'Bold Beauty Serum', description: 'This is product 4', price: 30, image: product5 },
-  //   { id: 6, name: 'Bold Beauty Cocoa Lotion', description: 'This is product 6', price: 30, image: product6 },
-  // ];
-
   return (
     <CartProvider>
       <Router>
@@ -58,13 +40,12 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home products={products} />} />
               <Route path="/products" element={<ProductList products={products} />} />
-              <Route path="/products" element={<Products/>}/>
+              <Route path="/products/:productId" element={<ProductDetails products={products} />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/payments" element={<Payments />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="*" element={<Error />} />
-              {/* <Route path="/MyReactPage" element={<MyReactPage />} /> */}
             </Routes>
           </div>
           <Footer />
