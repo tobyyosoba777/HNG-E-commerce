@@ -1,4 +1,3 @@
-// src/Components/ProductCard.jsx
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
@@ -24,13 +23,19 @@ const ProductCard = ({ product }) => {
         <div className="mt-2">
           <h2 className="text-xl font-bold text-center">{product.name}</h2>
           {price ? <p className="font-semibold text-center">${price}</p> : null}
-          <div className='flex items-center justify-center mt-5'>
+          <div className='flex text-sm items-center justify-center mt-5'>
             <button
               onClick={() => addToCart(product)}
-              className="items-center px-4 py-1 mx-auto text-center text-white bg-orange-700 rounded hover:bg-orange-800"
+              className="px-4 py-1 mr-2 text-white bg-orange-700 rounded hover:bg-orange-800"
             >
               Add to Cart
             </button>
+            <Link
+              to={`/products/${product.id}`}
+              className="px-4 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
+            >
+              Details
+            </Link>
           </div>
         </div>
       </div>
