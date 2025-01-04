@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=ca7b597cebd049f6bc533f71d63661be&reverse_sort=false&page=${currentPage}&size=10&Appid=2JKQ8NFUUQSV2LQ&Apikey=bb65a8a2ce1f4ab2b9b2f144bbecc96620240713125415418473`;
+        const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=8aa54db6db584a49b8d3ad1e7ad7c89b&reverse_sort=false&page=${currentPage}&size=10&Appid=ZZYIKHSECFBMCWL&Apikey=ef46e349cc8c4a3080d7e21bac0f575520250104032026396652`;
         const response = await fetch(url);
         const data = await response.json();
         
